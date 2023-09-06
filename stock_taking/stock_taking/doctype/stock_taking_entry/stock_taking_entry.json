@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-05 10:30:08.139353",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "page_no",
+  "counted_by",
+  "item_code",
+  "description",
+  "available_qty",
+  "system_qty",
+  "valuation_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "available_qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Inventory Qty",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "system_qty",
+   "fieldtype": "Float",
+   "label": "System Qty",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valuation_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Valuation Rate",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "page_no",
+   "fieldtype": "Int",
+   "label": "Page No",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "counted_by",
+   "fieldtype": "Data",
+   "label": "Counted By",
+   "length": 3,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-06 11:15:35.743427",
+ "modified_by": "Administrator",
+ "module": "Stock Taking",
+ "name": "Stock Taking Entry",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

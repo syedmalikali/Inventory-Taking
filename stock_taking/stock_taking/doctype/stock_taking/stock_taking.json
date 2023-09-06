@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-09-05 10:27:10.811605",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "inventory_taking_information_section",
+  "title",
+  "warehouse",
+  "page_no",
+  "column_break_tqnb",
+  "from",
+  "to",
+  "counted_by",
+  "section_break_iwyr",
+  "physical_stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "For Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tqnb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Up To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_iwyr",
+   "fieldtype": "Section Break",
+   "label": "Physical Stock Entry Section"
+  },
+  {
+   "fieldname": "physical_stock_entry",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Stock Taking Entry"
+  },
+  {
+   "fieldname": "inventory_taking_information_section",
+   "fieldtype": "Section Break",
+   "label": "Inventory Taking Information"
+  },
+  {
+   "fieldname": "page_no",
+   "fieldtype": "Int",
+   "label": "Page No",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "counted_by",
+   "fieldtype": "Data",
+   "label": "Counted By",
+   "length": 3
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-06 10:48:25.428732",
+ "modified_by": "Administrator",
+ "module": "Stock Taking",
+ "name": "Stock Taking",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
