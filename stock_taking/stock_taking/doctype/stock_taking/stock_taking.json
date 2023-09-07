@@ -10,13 +10,16 @@
   "inventory_taking_information_section",
   "title",
   "warehouse",
-  "page_no",
   "column_break_tqnb",
   "from",
   "to",
+  "entry_screen_tab",
+  "page_no",
+  "column_break_oayj",
   "counted_by",
   "section_break_iwyr",
-  "physical_stock_entry"
+  "physical_stock_entry",
+  "process_data"
  ],
  "fields": [
   {
@@ -79,11 +82,25 @@
    "fieldtype": "Data",
    "label": "Counted By",
    "length": 3
+  },
+  {
+   "fieldname": "entry_screen_tab",
+   "fieldtype": "Tab Break",
+   "label": "Entry Screen"
+  },
+  {
+   "fieldname": "process_data",
+   "fieldtype": "Button",
+   "label": "Process Data"
+  },
+  {
+   "fieldname": "column_break_oayj",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-06 10:48:25.428732",
+ "modified": "2023-09-06 16:03:59.348372",
  "modified_by": "Administrator",
  "module": "Stock Taking",
  "name": "Stock Taking",
