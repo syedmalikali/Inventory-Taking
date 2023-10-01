@@ -29,7 +29,37 @@ def process_stock_entry(stn):
                             physical_qty <> 0 OR system_qty <> 0;
                     """,as_dict=True)
     return item_list
-    
 
+@frappe.whitelist()
+def add_payment_entry():
+    docPE = frappe.get_doc(dict(
+            doctype = 'Payment Entry',
+            docstatus = 1,
+            mode_of_payment = "Cash - Khobar",
+            paid_amount = doc.net_total,
+            party_type = "Customer",
+            party = doc.customer,
+            payment_type = "Receive",
+            payment_order_status = "Initiated",
+            received_amount = doc.net_total,
+            make_payment_via_journal_entry = 0,
+            source_exchange_rate = 1,
+            target_exchange_rate = 1,
+            paid_to = "12012003 - Cash Sales - Khobar - AH",
+            paid_to_account_currency = "SAR",
+            paid_to_account_type = "Cash",
+            reference_date = doc.posting_date,
+            reference_no = "1",
+            references = [{
+                "doctype": "Payment Entry Reference",
+                "allocated_amount": doc.net_total,
+                "reference_doctype": "Sales Invoice",
+                "reference_name": doc.name,
+                "parentfield": "references",
+                "parenttype": "Payment Entry",
+                "exchange_rate": 1
+            }]
+        )).insert()
+    frappe.msgprint("The Payment Entry " + docPE.name + " is created.")
 
-
+    return
