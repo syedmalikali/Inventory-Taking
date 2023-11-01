@@ -1,28 +1,30 @@
 frappe.ui.form.on('Stock Taking', {
 	refresh(frm) {
 		// your code here
-		console.log('hi from script')
+		
 	},
 	process_data(frm){
+		
 	    if (frm.is_dirty()){
 	        // frappe.msgprint('not saved')
 	    } else {
 	        
 	        // frappe.msgprint('saved')
-	        let item = 'ABL8-1"'
+	        let item = 'AHL8-1"'
 	       
 	        var total=0
-	        let docw = frappe.get_doc("Stock Taking", 1);
+	        let docw = frappe.get_doc("Stock Taking", 2);
+			
 	        docw.physical_stock_entry.forEach(d => {
 				if (d.item_code == item) {
 					 total += d.available_qty;
-					 console.log(total)
+					 
 				} // if itemcode condition finish here
 			} 
 			);// foreach finish here
 			frappe.call({
 			    method:"stock_taking.api.process_stock_entry",
-			    args:{'stn':1},
+			    args:{'stn':2},
 			    callback:function(r){
 			        console.log(r)
 			    }

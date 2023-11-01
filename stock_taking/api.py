@@ -22,7 +22,7 @@ def process_stock_entry(stn):
                         FROM
                             tabItem AS it
                         LEFT JOIN
-                            `tabStock Taking Entry` AS ste ON it.item_code = ste.item_code AND ste.parent = 1
+                            `tabStock Taking Entry` AS ste ON it.item_code = ste.item_code AND ste.parent = 2
                         GROUP BY
                             it.item_code, it.item_name
                         HAVING
